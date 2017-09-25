@@ -1,0 +1,294 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>修改管理员信息界面</title>
+<!-- Bootstrap Styles-->
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<!-- FontAwesome Styles-->
+<link href="assets/css/font-awesome.css" rel="stylesheet" />
+<!-- Custom Styles-->
+<link href="assets/css/custom-styles.css" rel="stylesheet" />
+<!-- Google Fonts-->
+<link href='http://fonts.useso.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default top-navbar" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".sidebar-collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.jsp"><strong>后台管理</strong>
+			</a>
+		</div>
+
+		<ul class="nav navbar-top-links navbar-right">
+
+			<!-- /.dropdown -->
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#" aria-expanded="false"> <i
+					class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i> </a>
+				<ul class="dropdown-menu dropdown-user">
+					<li><a href="#"><i class="fa fa-user fa-fw"></i> 个人信息</a></li>
+					<li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a></li>
+					<li class="divider"></li>
+					<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> 退出</a></li>
+				</ul> <!-- /.dropdown-user --></li>
+			<!-- /.dropdown -->
+		</ul>
+		</nav>
+		<!--/. NAV TOP  -->
+		<nav class="navbar-default navbar-side" role="navigation">
+		<div class="sidebar-collapse">
+			<ul class="nav" id="main-menu">
+
+				<li><a href="Goods.jsp"><i class="fa fa-dashboard"></i>
+						商品信息管理 <!-- <span class="fa arrow"></span> -->
+				</a> <!--  <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">添加商品信息</a>
+                            </li>
+                            <li>
+                                <a href="#">修改商品信息</a>
+                            </li>
+                            <li>
+                                <a href="#">删除商品信息</a>
+                            </li>
+                        </ul> --></li>
+				<li><a href="order.jsp"><i class="fa fa-desktop"></i>订单信息管理
+						<!-- <span class="fa arrow"></span> -->
+				</a> <!--  <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                        </ul> --></li>
+				<li><a href="customer.jsp"><i class="fa fa-qrcode"></i>
+						顾客信息管理</a></li>
+				<li><a href="summary.jsp"><i class="fa fa-bar-chart-o"></i>
+						销售情况统计</a></li>
+
+				<li><a class="active-menu" href="Admin.jsp"><i
+						class="fa fa-table"></i> 管理员信息管理</a></li>
+				<li><a href="form.jsp"><i class="fa fa-edit"></i>
+						上传信息的jsp</a></li>
+
+
+				<li><a href="grants.jsp"><i class="fa fa-sitemap"></i>
+						模块信息管理</a></li>
+
+				<li><a href="empty.jsp"><i class="fa fa-fw fa-file"></i>
+						联系我们</a></li>
+			</ul>
+
+		</div>
+
+		</nav>
+		<!-- /. NAV SIDE  -->
+		<div id="page-wrapper">
+			<div class="header">
+				<h1 class="page-header"></h1>
+				<ol class="breadcrumb">
+					<li><a href="index.jsp">主页</a>
+					</li>
+					<li><a href="Admin.jsp">管理员信息管理</a>
+					</li>
+					<li class="active">修改管理员信息</li>
+				</ol>
+
+			</div>
+			<div id="page-inner">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">按要求输入相应信息</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-lg-6">
+										<form role="form">
+											<div class="form-group">
+												<label>用户名</label> <input class="form-control"
+													placeholder="用户名不能为空">
+											</div>
+											<div class="form-group">
+												<label>密码</label> <input type="password"
+													class="form-control" placeholder="密码不能为空">
+											</div>
+											<div class="form-group">
+												<label>性别</label> <label class="radio-inline"> <input
+													type="radio" name="admin_sex" id="optionsRadiosInline1"
+													value="male" checked="">男 </label> <label
+													class="radio-inline"> <input type="radio"
+													name="admin_sex" id="optionsRadiosInline2" value="female">女
+												</label>
+											</div>
+											<div class="form-group">
+												<label>家庭地址</label> <input class="form-control"
+													placeholder="地址不能为空，可考虑省市县级联实现">
+											</div>
+											<div class="form-group">
+												<label>受聘日期</label> <input class="form-control"
+													placeholder="格式如： 2016-01-01">
+											</div>
+											<div class="form-group">
+												<label>邮箱</label> <input class="form-control"
+													placeholder="格式如：email@example.com">
+
+											</div>
+
+
+											<div class="form-group">
+												<label>所属部门</label> <select class="form-control">
+													<option>业务部门</option>
+													<option>配送部门</option>
+													<option>销售部门</option>
+													<option>系统维护部门</option>
+												</select>
+											</div>
+											<!-- <div class="form-group">
+                                            <label>是否配送</label>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">No
+                                            </div>
+                                           
+                                        </div> -->
+											<!-- <div class="form-group">
+                                            <label>所属类别</label>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">早餐
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">午餐
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">晚餐
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Inline Checkboxes</label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">1
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">2
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">3
+                                            </label>
+                                        </div> -->
+											<!-- <div class="form-group">
+                                            <label>所属类别</label>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">早餐
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">午餐
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">晚餐
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>是否打折降价</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">Yes
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">No
+                                            </label> -->
+											<!--  <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                                            </label> -->
+											<!--  </div> -->
+											<!--  <div class="form-group">
+                                            <label>Selects</label>
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Multiple Selects</label>
+                                            <select multiple="" class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div> -->
+											<button type="submit" class="btn btn-default">Submit
+												Button</button>
+											<button type="reset" class="btn btn-default">Reset
+												Button</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer>
+				<p>
+					Copyright &copy; 2016.Company name All rights reserved.<a
+						target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+				</p>
+				</footer>
+			</div>
+			<!-- /. PAGE INNER  -->
+		</div>
+		<!-- /. PAGE WRAPPER  -->
+	</div>
+	<!-- /. WRAPPER  -->
+	<!-- JS Scripts-->
+	<!-- jQuery Js -->
+	<script src="assets/js/jquery-1.10.2.js"></script>
+	<!-- Bootstrap Js -->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- Metis Menu Js -->
+	<script src="assets/js/jquery.metisMenu.js"></script>
+	<!-- Custom Js -->
+	<script src="assets/js/custom-scripts.js"></script>
+
+
+</body>
+</html>
+

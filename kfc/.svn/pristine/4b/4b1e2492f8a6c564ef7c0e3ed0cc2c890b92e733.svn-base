@@ -1,0 +1,153 @@
+package com.newer.pojo;
+// default package
+
+import java.util.Set;
+
+
+/**
+ * User entity. @author MyEclipse Persistence Tools
+ */
+
+public class User  implements java.io.Serializable {
+
+
+    // Fields    
+
+     private int id;
+     private String userName;
+     private String userTel;
+     private String userEmail;
+     private String userPassword;
+     private String role;
+     private Set<Order> orders;
+
+
+    // Constructors
+
+    /** default constructor */
+    public User() {
+    }
+
+	/** minimal constructor */
+    public User(String role) {
+        this.role = role;
+    }
+    
+    /** full constructor */
+    public User(String userName, String userTel, String userEmail, String userPassword, String role, Set orders) {
+        this.userName = userName;
+        this.userTel = userTel;
+        this.userEmail = userEmail;
+        this.userPassword = userPassword;
+        this.role = role;
+        this.orders = orders;
+    }
+
+   
+    // Property accessors
+
+    public User(int id, String userName, String userTel, String userEmail,
+			String userPassword, String role, Set<Order> orders) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.userTel = userTel;
+		this.userEmail = userEmail;
+		this.userPassword = userPassword;
+		this.role = role;
+		this.orders = orders;
+	}
+
+	public User(int id, String userName, String role) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.role = role;
+	}
+
+	public User(int id, String userName, String userPassword, String role) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.role = role;
+	}
+
+	public User(String userName, String userPassword) {
+		super();
+		this.userName = userName;
+		this.userPassword = userPassword;
+	}
+
+	public int getId() {
+        return this.id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return this.userName;
+    }
+    
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserTel() {
+        return this.userTel;
+    }
+    
+    public void setUserTel(String userTel) {
+        this.userTel = userTel;
+    }
+
+    public String getUserEmail() {
+        return this.userEmail;
+    }
+    
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public String getUserPassword() {
+        return this.userPassword;
+    }
+    
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    public String getRole() {
+        return this.role;
+    }
+    
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public Set<Order> getOrders() {
+        return this.orders;
+    }
+    
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", userTel="
+				+ userTel + ", userEmail=" + userEmail + ", userPassword="
+				+ userPassword + ", role=" + role + ", orders=" + orders + "]";
+	}
+   
+
+
+
+
+
+
+
+
+}

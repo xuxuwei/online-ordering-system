@@ -1,0 +1,49 @@
+package com.newer.dao.impl;
+
+import java.util.List;
+
+import com.newer.pojo.User;
+
+
+
+public class TestUser {
+	public static void main(String[] args) {
+		UserDAO dao = new UserDAO();
+
+//	 保存
+		 User user = new User();
+		 user.setUserName("王五");
+		 dao.save(user);
+
+		/* 根据ID查询
+		 User user = dao.findById(5);
+		 System.out.println(user);*/
+
+		/* QBC方式查询
+		 User user = new User();
+		 user.setId(4);
+		 user.setCname("李四");
+		 List<User> userList = dao.findByExample(user);
+		 for (User c : userList) {
+		 System.out.println(c);
+		 }*/
+
+		/* HQL查询
+		 List<User> userList = dao.findByProperty("id", 5);
+		 List<User> userList = dao.findByProperty("cname", "李四");
+		 List<User> userList = dao.findByCname("李四");
+		 for (User c : userList) {
+		 System.out.println(c);
+		 }*/
+
+//		 查询所有记录
+		 List<User> userList = dao.findAll();
+		 for (User c : userList) {
+		 System.out.println(c);
+		 }
+
+
+
+		
+	}
+}

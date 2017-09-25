@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理员信息界面</title>
+	<!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.useso.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong>后台管理</strong></a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="myself.html"><i class="fa fa-user fa-fw"></i> 个人信息</a>
+                        </li>
+                        <li><a href="setMyself.html"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a href="Goods.html"><i class="fa fa-dashboard"></i> 商品信息管理
+                        <!-- <span class="fa arrow"></span> --></a>
+                      
+                    </li>
+                    <li>
+                        <a href="order.html"><i class="fa fa-desktop"></i>订单信息管理
+                        <!-- <span class="fa arrow"></span> --></a>
+                       
+                    </li>
+					 <li>
+                        <a href="customer.html"><i class="fa fa-qrcode"></i> 顾客信息管理</a>
+                    </li>
+                    <li>
+                        <a href="summary.html"><i class="fa fa-bar-chart-o"></i> 销售情况统计</a>
+                    </li>
+                    
+                     <li>
+                        <a class="active-menu" href="Admin.html"><i class="fa fa-table"></i> 管理员信息管理</a>
+                    </li>
+                   <!--  <li>
+                        <a href="form.html"><i class="fa fa-edit"></i> 上传信息的html</a>
+                    </li> -->
+
+
+                    <li>
+                         <a href="grants.html"><i class="fa fa-sitemap"></i> 模块信息管理</a>
+                        
+                    </li>
+                    
+                    <li>
+                        <a  href="empty.html"><i class="fa fa-fw fa-file"></i> 版本信息</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+		  <div class="header"> 
+                        <h1 class="page-header">
+                             
+                        </h1>
+						<ol class="breadcrumb">
+					  <li><a href="index.html">主页</a></li>
+					  <li><a href="admin.html">管理员信息模块</a></li>
+					  <li class="active">管理员</li>
+					</ol> 
+									
+		</div>
+            <div id="page-inner" >
+            	 <div class="col-md-6 col-sm-6">
+                    <div class="panel panel-default" style="width: 1500px;">
+                        <div class="panel-heading">
+                            <a href="addAdmin.html">添加管理员</a>
+                            <a href="myGrants.html">我的权限</a>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="nav nav-pills">
+                               
+                                <li class=""><a href="#profile-pills" data-toggle="tab">配送部门</a>
+                                </li>
+                                <li class=""><a href="#messages-pills" data-toggle="tab">销售部门</a>
+                                </li>
+                                <li class=""><a href="#settings-pills" data-toggle="tab">系统维护部门</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                             <!--    <div class="tab-pane fade" id="home-pills">
+                                    
+                                    <p> -->
+                                    	
+						                  <!--   Kitchen Sink -->
+						               <!--  <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+						                    <thead>
+						                        <tr>
+						                            <th>编号</th>
+						                            <th>姓名</th>
+						                            <th>性别</th>
+						                            <th>受聘日期</th>
+						                            <th></th>
+						                            <th></th>
+						                        </tr>
+						                    </thead>
+						                    <tbody>
+						                        <tr>
+						                            <td>1</td>
+						                            <td>Mark</td>
+						                            <td>Otto</td>
+						                            <td>@mdo</td>
+						                            <td><a href="modifyAdmin.html">修改</a></td>
+                                                    <td><a href="#">删除</a></td>
+						                        </tr>
+						                         <tr>
+						                            <td>1</td>
+						                            <td>jark</td>
+						                            <td>Otto</td>
+						                            <td>@mdo</td>
+						                            <td><a href="modifyAdmin.html">修改</a></td>
+                                                    <td><a href="#">删除</a></td>
+						                        </tr>               
+						                        </tbody>
+						                </table>
+						                 -->               
+						                 
+						                     <!-- End  Kitchen Sink -->
+						                
+                                  <!--   </p>
+                                </div>  -->
+                                <div class="tab-pane fade" id="profile-pills">
+                                  
+                                    <p>
+                                    	
+							                <!--   Basic Table  -->
+							            <table class="table table-striped table-bordered table-hover" id="dataTables-example1">
+						                    <thead>
+						                        <tr>
+						                            <th>编号</th>
+						                            <th>姓名</th>
+						                            <th>性别</th>
+						                            <th>受聘日期</th>
+						                            <th></th>
+						                            <th></th>
+						                        </tr>
+						                    </thead>
+						                    <tbody>
+						                        <tr>
+						                            <td>2</td>
+						                            <td>Mark</td>
+						                            <td>Otto</td>
+						                            <td>@mdo</td>				                            
+						                            <td><a href="modifyAdmin.html">修改</a></td>
+                                                    <td><a href="#">删除</a></td>
+						                        </tr>
+						                                       
+						                        </tbody>
+						                </table>
+							                   
+							            
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade" id="messages-pills">
+                                    
+                                    <p>
+                                    
+						                      <!--    Striped Rows Table  -->
+						                    
+						                <table class="table table-striped table-bordered table-hover" id="dataTables-example2">
+                                        
+						                    <thead>
+						                        <tr>
+                                                <a href="addAdmin.html">查看权限</a>
+						                            <th>编号</th>
+						                            <th>姓名</th>
+						                            <th>性别</th>
+						                            <th>受聘日期</th>
+						                            <th></th>
+						                            <th></th>
+						                        </tr>
+						                    </thead>
+						                    <tbody>
+						                        <tr>
+						                            <td>3</td>
+						                            <td>Mark</td>
+						                            <td>Otto</td>
+						                            <td>@mdo</td>
+						                            <td><a href="modifyAdmin.html">修改</a></td>
+                                                    <td><a href="#">删除</a></td>
+						                        </tr>
+						                                       
+						                        </tbody>
+						                </table>
+						                    <!--  End  Striped Rows Table  -->
+						                
+                                    </p>
+                                </div>
+                                <div class="tab-pane fade " id="settings-pills">
+                                    
+                                    <p>
+                                    
+						                    <!--    Bordered Table  -->
+						                    
+						                <table class="table table-striped table-bordered table-hover" id="dataTables-example3">
+						                    <thead>
+						                        <tr>
+						                            <th>编号</th>
+						                            <th>姓名</th>
+						                            <th>性别</th>
+						                            <th>受聘日期</th>
+						                            <th></th>
+						                            <th></th>
+						                        </tr>
+						                    </thead>
+						                    <tbody>
+						                        <tr>
+						                            <td>4</td>
+						                            <td>Mark</td>
+						                            <td>Otto</td>
+						                            <td>@mdo</td>
+						                             <td><a href="modifyAdmin.html">修改</a></td>
+                                                    <td><a href="#">删除</a></td>
+						                        </tr>
+						                                       
+						                        </tbody>
+						                </table>
+						                           
+						                     <!--  End  Bordered Table  -->
+						                
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				 
+				</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+   <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+	 
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+	
+	
+	<script src="assets/js/easypiechart.js"></script>
+	<script src="assets/js/easypiechart-data.js"></script>
+	
+	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	 <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+                $('#dataTables-example1').dataTable();
+                $('#dataTables-example2').dataTable();
+                $('#dataTables-example3').dataTable();
+            });
+    </script>
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>

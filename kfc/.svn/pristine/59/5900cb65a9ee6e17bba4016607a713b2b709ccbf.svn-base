@@ -1,0 +1,64 @@
+package com.newer.service.impl.back;
+
+import java.util.List;
+
+import com.newer.dao.impl.OrderDAO;
+import com.newer.pojo.Order;
+import com.newer.service.inter.back.AdOrderService;
+
+public class AdOrderServiceImpl implements AdOrderService{
+	
+	private OrderDAO orderDao;
+	
+
+	public OrderDAO getOrderDao() {
+		return orderDao;
+	}
+
+	public void setOrderDao(OrderDAO orderDao) {
+		this.orderDao = orderDao;
+	}
+
+	@Override
+	public boolean addOrder(Order m) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteByOrderId(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modifyByOrderId(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Order selectOrderById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Order> selectAllOrder() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Order selectOrderByO_time(String Time) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Order selectOrderBySend(boolean send) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

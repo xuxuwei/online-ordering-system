@@ -1,0 +1,42 @@
+package com.newer.dao.inter.back;
+
+import java.util.List;
+
+import com.newer.pojo.Module;
+import com.newer.pojo.Role;
+
+public interface ModuleDAO {
+	
+	/**
+	 * 添加模块
+	 * @return
+	 */
+	public boolean addModule();
+	
+	/**
+	 * 根据id删除模块
+	 * @param id
+	 * @return
+	 */
+	public boolean deleteModuleById(int id);
+	
+	/**
+	 * 查询所有的模块
+	 * @return
+	 */
+	public  List<Module> selectAllModule();
+	
+	/**
+	 * 根据模块id修改模块
+	 * @param id
+	 * @return
+	 */
+	public boolean modifyModuleById(int id);
+	
+	/**
+	 * 根据角色修改模块
+	 * @param user
+	 * @return
+	 */
+	public boolean modifyModule(Role role);
+}

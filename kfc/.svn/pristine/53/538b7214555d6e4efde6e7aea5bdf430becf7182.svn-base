@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- 配置自动代理 -->
+	<aop:aspectj-autoproxy />
+
+	<!-- 数据持久层 -->
+	<bean id="mealDao" class="com.newer.dao.impl.back.MealDAOimpl"></bean>
+	<bean id="moduleDao" class="com.newer.dao.impl.back.ModuleDAOimpl">	</bean>
+	<bean id="orderDao" class="com.newer.dao.impl.back.OrderDAOimpl"></bean>
+	<bean id="roleDao" class="com.newer.dao.impl.back.RoleDAOimpl"></bean>
+	<bean id="userDao" class="com.newer.dao.impl.back.UserDAOimpl"></bean>
+	
+	<!-- 业务逻辑层 -->
+	<bean id="mealService" class="com.newer.service.impl.back.AdMealServiceImpl">
+		<property name="mealDao" ref="mealDao"></property>
+	</bean>
+	<bean id="moduleservice" class="com.newer.service.impl.back.AdModuleServiceImpl">
+		<property name="moduleDao" ref="moduleDao"></property>
+	</bean>
+	<bean id="orderService" class="com.newer.service.impl.back.AdOrderServiceImpl">
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
+		<bean id="roleService" class="com.newer.service.impl.back.AdRoleServiceImpl">
+		<property name="roleDao" ref="roleDao"></property>
+	</bean>
+	<bean id="userService" class="com.newer.service.impl.back.AdUserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<!-- 配置业务逻辑层 -->
+	<bean id="MealAction" class="com.newer.action.back.MealAction">
+		<property name="mealService" ref="mealService"></property>
+	</bean>
+	<bean id="ModuleAction" class="com.newer.action.back.ModuleAction">
+		<property name="moduleService" ref="moduleService"></property>
+	</bean>
+	<bean id="OrderAction" class="com.newer.action.back.OrderAction">
+		<property name="orderService" ref="orderService"></property>
+	</bean>
+	<bean id="RoleAction" class="com.newer.action.back.RoleAction">
+		<property name="roleService" ref="roleService"></property>
+	</bean>
+	<bean id="UserAction" class="com.newer.action.back.UserAction">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- 配置pojo -->
+	<bean id="meal" class="com.newer.pojo.Meal" scope="prototype"></bean>
+	<bean id="module" class="com.newer.pojo.Module" scope="prototype"></bean>
+	<bean id="order" class="com.newer.pojo.Order" scope="prototype"></bean>
+	<bean id="role" class="com.newer.pojo.Role" scope="prototype"></bean>
+	<bean id="user" class="com.newer.pojo.User" scope="prototype"></bean>
+</beans>

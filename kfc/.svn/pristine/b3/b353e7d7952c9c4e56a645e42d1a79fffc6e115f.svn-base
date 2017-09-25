@@ -1,0 +1,171 @@
+package com.newer.dao.impl;
+// default package
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Example;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.newer.dao.inter.BaseHibernateDAO;
+import com.newer.pojo.Meal;
+
+/**
+ 	* 
+  * @author 
+ */
+public class MealDAO extends BaseHibernateDAO  {
+	     private static final Logger log = LoggerFactory.getLogger(MealDAO.class);
+		//property constants
+	public static final String MEAL_NAME = "mealName";
+	public static final String MEAL_INTRODUCE = "mealIntroduce";
+	public static final String MEAL_PRICE = "mealPrice";
+	public static final String MEAL_TYPE = "mealType";
+	public static final String MEAL_AMOUNT = "mealAmount";
+	public static final String SALE_TIME = "saleTime";
+
+
+
+//    保存操作
+    public boolean save(Meal transientInstance) {
+        boolean flag = false;
+		Transaction tran = null;
+        try {
+        	tran = getSession().beginTransaction();
+            getSession().save(transientInstance);
+            tran.commit();
+			flag = true;
+        } catch (RuntimeException re) {
+            tran.rollback();
+            throw re;
+        }
+        return flag;
+    }
+    
+//  更新操作
+  public boolean update(Meal meal) {
+		boolean flag = false;
+		Transaction tran = null;
+		try {
+			tran = getSession().beginTransaction();
+          getSession().update(meal);
+			tran.commit();
+			flag = true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tran.rollback();
+		} 
+		
+		return flag;
+	}
+//    删除操作
+	public void delete(Meal persistentInstance) {
+        boolean flag = false;
+		Transaction tran = null;
+        try {
+        	tran = getSession().beginTransaction();
+            getSession().delete(persistentInstance);
+            tran.commit();
+			flag = true;
+        } catch (RuntimeException re) {
+            tran.rollback();
+            throw re;
+        }
+    }
+//    根据id查询
+    public Meal findById( int id) {
+        try {
+            Meal instance = (Meal) getSession()
+                    .get(Meal.class, id);
+            return instance;
+        } catch (RuntimeException re) {
+            throw re;
+        }
+    }
+    
+//    根据实例查询
+    public List findByExample(Meal instance) {
+        try {
+            List results = getSession()
+                    .createCriteria("com.newer.pojo.Meal")
+                    .add(Example.create(instance))
+            .list();
+            return results;
+        } catch (RuntimeException re) {
+            throw re;
+        }
+    }    
+//    根据属性查询
+    public List findByProperty(String propertyName, Object value) {
+      try {
+         String queryString = "from Meal as model where model." 
+         						+ propertyName + "= ?";
+         Query queryObject = getSession().createQuery(queryString);
+		 queryObject.setParameter(0, value);
+		 return queryObject.list();
+      } catch (RuntimeException re) {
+         throw re;
+      }
+	}
+//根据商品名查询
+	public List findByMealName(Object mealName
+	) {
+		return findByProperty(MEAL_NAME, mealName
+		);
+	}
+//	根据商品介绍查询
+	public List findByMealIntroduce(Object mealIntroduce
+	) {
+		return findByProperty(MEAL_INTRODUCE, mealIntroduce
+		);
+	}
+//	根据商品价格查询
+	
+	public List findByMealPrice(Object mealPrice
+	) {
+		return findByProperty(MEAL_PRICE, mealPrice
+		);
+	}
+//	根据商品类型查询
+	public List findByMealType(Object mealType
+	) {
+		return findByProperty(MEAL_TYPE, mealType
+		);
+	}
+//	产品数量
+	public List findByMealAmount(Object mealAmount
+	) {
+		return findByProperty(MEAL_AMOUNT, mealAmount
+		);
+	}
+//	根据销售时间查询
+	public List findBySaleTime(Object saleTime
+	) {
+		return findByProperty(SALE_TIME, saleTime
+		);
+	}
+	
+//查询所有
+	public List findAll() {
+		try {
+			String queryString = "from Meal";
+	         Query queryObject = getSession().createQuery(queryString);
+			 return queryObject.list();
+		} catch (RuntimeException re) {
+			throw re;
+		}
+	}
+//	根据商品名模糊查询(%用户名%)，返回数组类型
+	public List<Meal> findByCondition(Meal meal) {
+		
+		Query query = getSession().createQuery(
+				"from Meal as m where m.mealName like :name");
+		query.setString("name", meal.getmealName());
+		return query.list();
+	}
+	
+
+}

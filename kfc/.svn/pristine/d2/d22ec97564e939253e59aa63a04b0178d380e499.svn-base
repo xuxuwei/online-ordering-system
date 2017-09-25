@@ -1,0 +1,5 @@
+package com.newer.service.impl.back;
+
+public class AdUserServiceImpl {
+
+}

@@ -1,0 +1,53 @@
+package com.newer.Test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import com.newer.dao.impl.back.MealDAOimpl;
+import com.newer.dao.impl.back.OrderDAOimpl;
+import com.newer.pojo.Meal;
+import com.newer.pojo.Order;
+
+public class TestMeal {
+	public static void main(String[] args) {
+		MealDAOimpl mealDao=new MealDAOimpl();
+		OrderDAOimpl orderDao=new OrderDAOimpl();
+		Meal m=new Meal();
+		Meal m1=new Meal();
+		Order o=new Order();
+		o.setOrderAddress("长沙市");
+		Order o1=new Order();
+		o1.setOrderAddress("杭州");
+		m.setMealName("汉堡");
+		m.setMealAmount(10);
+		m.setMealIntroduce("好吃的");
+		m.setMealIntroduce("10");
+		m.setMealType("早餐");
+		m1.setMealName("炸鸡");
+		m1.setMealAmount(10);
+		m1.setMealIntroduce("很好好吃的");
+		m1.setMealIntroduce("10");
+		m1.setMealName("午餐");
+		System.out.println(m);
+		Set<Order> orders=new HashSet<Order>();
+		orders.add(o);
+		orders.add(o1);
+		System.out.println(orders);
+		Set<Meal> meals=new HashSet<Meal>();
+		meals.add(m);
+		meals.add(m1);
+		System.out.println(meals);
+		m.setOrders(orders);
+		m1.setOrders(orders);
+		System.out.println(m1);
+		o.setMeals(meals);
+		System.out.println(o);
+		o1.setMeals(meals);
+		boolean flag=mealDao.addMeal(m);
+		boolean flag1=mealDao.addMeal(m1);
+		boolean f=orderDao.addOrder(o);
+		boolean f1=orderDao.addOrder(o1);
+		System.out.println(flag+"++++"+flag1);
+		System.out.println(f+"-----"+f1);
+	}
+}

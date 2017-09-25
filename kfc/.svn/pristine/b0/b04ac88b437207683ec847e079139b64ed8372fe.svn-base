@@ -1,0 +1,41 @@
+package com.newer.dao.impl.back;
+
+import java.util.List;
+
+import com.newer.dao.inter.back.ModuleDAO;
+import com.newer.pojo.Module;
+import com.newer.pojo.Role;
+
+public class ModuleDAOimpl implements ModuleDAO{
+
+	@Override
+	public boolean addModule() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteModuleById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Module> selectAllModule() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean modifyModuleById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modifyModule(Role role) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

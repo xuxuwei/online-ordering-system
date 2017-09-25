@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.newer.pojo">
+    <class name="Order" table="tb_order" catalog="kfc">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native"></generator>
+        </id>
+        
+        <property name="orderDate" type="java.util.Date">
+            <column name="order_date" length="10" />
+        </property>
+        <property name="orderAddress" type="java.lang.String">
+            <column name="order_address" length="100" />
+        </property>
+        <!-- <property name="bill" type="java.lang.String">
+            <column name="bill" length="10" /> 
+        </property> -->
+        <property name="orderTotal" type="java.lang.Integer">
+            <column name="order_total" />
+        </property>
+        <property name="orderPayType" type="java.lang.String">
+            <column name="order_pay_type" />
+        </property>
+        <property name="Boolean" type="java.lang.String">
+            <column name="boolean" />
+        </property>
+        <property name="otherRequire" type="java.lang.String">
+            <column name="other_require" />
+        </property>
+        <many-to-one name="user" class="User" fetch="join">
+            <column name="user_id" />
+        </many-to-one>
+         
+        <!-- name="meals" 是Order类中的meals属性 -->
+		<set name="meals" table="tb_meal_order" cascade="save-update">
+			<!-- 会在"tb_meal_order"中产生一个order_id字段，用于引用order表中的id -->
+			<key column="order_id" />
+			<!-- 会在"tb_meal_order"中产生一个meal_id字段，用于引用meal表中的id -->
+			<many-to-many class="Meal" column="meal_id"></many-to-many>
+		</set>
+    </class>
+</hibernate-mapping>

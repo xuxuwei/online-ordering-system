@@ -1,0 +1,28 @@
+package com.newer.action.back;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.newer.dao.inter.back.MealDAO;
+import com.newer.pojo.Meal;
+import com.newer.service.inter.back.AdMealService;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class MealAction extends ActionSupport{
+	@Autowired
+	private AdMealService mealService;
+	@Autowired
+	private Meal meal;
+	public AdMealService getMealService() {
+		return mealService;
+	}
+	public void setMealService(AdMealService mealService) {
+		this.mealService = mealService;
+	}
+	public Meal getMeal() {
+		return meal;
+	}
+	public void setMeal(Meal meal) {
+		this.meal = meal;
+	}
+	
+}

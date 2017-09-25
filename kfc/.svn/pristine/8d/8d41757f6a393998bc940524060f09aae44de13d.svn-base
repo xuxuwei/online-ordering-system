@@ -1,0 +1,87 @@
+package com.newer.action;
+
+import java.util.List;
+import java.util.Map;
+
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.ExceptionMapping;
+import org.apache.struts2.convention.annotation.ExceptionMappings;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+import org.apache.struts2.interceptor.ApplicationAware;
+import org.apache.struts2.interceptor.RequestAware;
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.newer.dao.impl.MealDAO;
+import com.newer.pojo.Meal;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
+//@ParentPackage(value = "struts-default")
+@Results({
+	@Result(name = "success", location = "/panini.jsp"),
+	@Result(name = "xiangxi", location = "/single.jsp"),
+	@Result(name = "error", location = "/erro.jsp") })
+public class MealAction  extends ActionSupport implements RequestAware, SessionAware,ApplicationAware {
+	Meal meal;	
+	private Map<String, Object> application;
+	private Map<String, Object> request;
+	private Map<String, Object> session;
+	public Meal getMeal() {
+		return meal;
+	}
+	public void setMeal(Meal meal) {
+		this.meal = meal;
+	}
+	MealDAO dao=new MealDAO();
+	public String b;
+	//浏览菜单
+	@Action(value = "meal")
+	public String execute() throws Exception {
+		System.out.println(meal.getMealName());
+		
+		List<Meal> result = dao.findByMealType(meal.getMealName());
+		for(Meal a : result)
+		{
+		System.out.println(a);
+		//request.put("meal", a.getImages_path());	
+	//	ActionContext.getContext().put("path", a.getImages_path());
+		}
+		ActionContext.getContext().put("result", result);
+	    return  "success";
+	}
+	@Action(value = "xiangxi")
+	public  String xiangxi() throws  Exception {
+		System.out.println(meal.getId());
+		 Meal xiang = dao.findById(meal.getId());
+		 ActionContext.getContext().put("xiang", xiang);
+		 System.out.println(xiang);
+		 return  "xiangxi";
+	}
+	@Override
+	public void setApplication(Map<String, Object> application) {
+		System.out.println("---------------------setApplication(Map<String, Object> application)");
+		this.application = application;
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		System.out.println("----------------------setSession(Map<String, Object> session)");
+		this.session = session;
+	}
+
+	@Override
+	public void setRequest(Map<String, Object> request) {
+		System.out.println("--------------------setRequest(Map<String, Object> request)");
+		this.request = request;
+}
+	//@Action(value = "meal")
+	/*private String findall() throws Exception {
+		List<Meal> result = dao.findByMealType("帕尼尼");
+		System.out.println("ddddddddddddd");
+	    return  "success";*/
+	//}
+	
+}

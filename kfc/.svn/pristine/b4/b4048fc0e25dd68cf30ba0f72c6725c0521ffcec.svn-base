@@ -1,0 +1,27 @@
+package com.newer.action.back;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.newer.pojo.Module;
+import com.newer.service.inter.back.AdModuleService;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ModuleAction extends ActionSupport{
+	@Autowired
+	private AdModuleService moduleService;
+	@Autowired
+	private Module module;
+	public AdModuleService getModuleService() {
+		return moduleService;
+	}
+	public void setModuleService(AdModuleService moduleService) {
+		this.moduleService = moduleService;
+	}
+	public Module getModule() {
+		return module;
+	}
+	public void setModule(Module module) {
+		this.module = module;
+	}
+	
+}

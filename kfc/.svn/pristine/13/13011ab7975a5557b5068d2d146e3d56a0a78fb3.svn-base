@@ -1,0 +1,67 @@
+package com.newer.service.impl.back;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.newer.dao.inter.back.MealDAO;
+import com.newer.pojo.Meal;
+import com.newer.service.inter.back.AdMealService;
+
+public class AdMealServiceImpl implements AdMealService {
+	@Autowired
+	private MealDAO MealDAO;
+	
+	public MealDAO getMealDAO() {
+		return MealDAO;
+	}
+
+	public void setMealDAO(MealDAO MealDAO) {
+		this.MealDAO = MealDAO;
+	}
+
+	@Override
+	public boolean add(Meal m) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(Meal m) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modify(Meal m) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Meal selectById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Meal> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Meal selectByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Meal> selectBytype(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+}

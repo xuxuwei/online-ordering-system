@@ -1,0 +1,72 @@
+package com.newer.dao.impl.back;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.newer.dao.inter.back.MealDAO;
+import com.newer.pojo.Meal;
+import com.newer.util.HibernateSessionFactory;
+
+public class MealDAOimpl implements MealDAO{
+
+	@Override
+	public boolean addMeal(Meal m) {
+		boolean flag=false;
+		SessionFactory sessionFactory=HibernateSessionFactory.getSessionFactory();
+		Session session=sessionFactory.openSession();
+		Transaction tran=session.beginTransaction();
+		try {
+			session.save(m);
+			tran.commit();
+			flag=true;
+		} catch (HibernateException e) {
+			
+			e.printStackTrace();
+			tran.rollback();
+		}finally{
+			session.close();
+		}
+		return flag;
+	}
+
+	@Override
+	public boolean deleteByMealId(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modifyByMealId(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Meal selectMealById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Meal> selectAllMeal() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Meal selectMealByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Meal> selectMealByCategory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

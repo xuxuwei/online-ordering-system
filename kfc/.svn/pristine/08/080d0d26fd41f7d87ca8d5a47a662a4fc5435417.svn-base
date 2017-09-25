@@ -1,0 +1,41 @@
+package com.newer.dao.inter.back;
+
+import java.util.List;
+
+import com.newer.pojo.Role;
+import com.newer.pojo.User;
+
+public interface RoleDAO {
+	/**
+	 * 添加角色
+	 * @return
+	 */
+	public boolean addRole();
+	
+	/**
+	 * 根据id删除角色
+	 * @param id
+	 * @return
+	 */
+	public boolean deleteRoleById(int id);
+	
+	/**
+	 * 查询所有的角色
+	 * @return
+	 */
+	public  List<Role> selectAllRole();
+	
+	/**
+	 * 根据角色id修改角色
+	 * @param id
+	 * @return
+	 */
+	public boolean modifyRoleById(int id);
+	
+	/**
+	 * 根据用户修改角色
+	 * @param user
+	 * @return
+	 */
+	public boolean modifyRole(User user);
+}

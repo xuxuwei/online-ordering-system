@@ -1,0 +1,54 @@
+package com.newer.service.inter.back;
+
+import java.util.List;
+
+import com.newer.pojo.Order;
+
+public interface AdOrderService {
+	
+	/**
+	 * 是否增加订单
+	 * @param m
+	 * boolean 类型
+	 */	
+	public boolean addOrder(Order m);
+	
+	/**
+	 * 是否根据订单id删除订单
+	 * @param id
+	 * boolean 类型
+	 */	
+	public boolean deleteByOrderId(int id);
+	
+	/**
+	 * 根据订单id修改订单
+	 */
+	public boolean modifyByOrderId(int id);
+	
+	/**
+	 * 根据订单id查询订单
+	 * @param id
+	 * @return Order
+	 */
+	public Order selectOrderById(int id);
+	
+	/**
+	 * 查询所有订单
+	 * @return List<Order>
+	 */
+	public List<Order> selectAllOrder();
+	
+	/**
+	 * 根据下单时间查询订单
+	 * @param O_time
+	 * @return Order
+	 */
+	public Order selectOrderByO_time(String Time);
+	/**
+	 * 根据配送查询订单
+	 * @param send
+	 * @return Order
+	 */
+	public Order selectOrderBySend(boolean send);
+	
+}

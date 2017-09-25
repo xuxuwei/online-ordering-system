@@ -1,0 +1,43 @@
+package com.newer.action;
+
+
+
+import java.util.List;
+
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+import com.newer.dao.impl.MealDAO;
+import com.newer.pojo.Meal;
+import com.opensymphony.xwork2.ActionSupport;
+
+@Results({ @Result(name = "success", location = "/login.jsp"),
+	@Result(name = "failed", location = "/index.jsp") })
+public class SearchAction extends ActionSupport {
+	
+	private Meal meal;
+	
+	public Meal getMeal() {
+		return meal;
+	}
+	public void setMeal(Meal meal) {
+		this.meal = meal;
+	}
+	
+	MealDAO dao= new MealDAO();
+	
+	@Action("ss")
+	public String add() throws Exception {
+		System.out.println(meal.getMealName());
+		System.out.println("aaaaaaaaa");
+		List<Meal> results = dao.findByCondition(meal);
+		System.out.println("aaapppppppppppppppppaaaaaa");
+		for(Meal meal : results)
+		{
+		System.out.println(meal);
+		}
+		System.out.println("aaaahjgjjhjhaaaaa");
+		return "success";
+	}
+}

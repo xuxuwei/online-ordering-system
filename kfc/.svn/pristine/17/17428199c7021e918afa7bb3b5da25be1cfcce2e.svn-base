@@ -1,0 +1,131 @@
+package com.newer.pojo;
+// default package
+
+import java.util.Date;
+
+
+/**
+ * Order entity. @author MyEclipse Persistence Tools
+ */
+
+public class Order  implements java.io.Serializable {
+
+
+    // Fields    
+
+     private int id;
+     private User user;
+     private Date orderDate;
+     private String orderAddress;
+     private String bill;
+     private int orderTotal;
+     private String orderPayType;
+
+
+    // Constructors
+
+    /** default constructor */
+    public Order() {
+    }
+
+    
+    /** full constructor */
+    public Order(User user, Date orderDate, String orderAddress, String bill, int orderTotal, String orderPayType) {
+        this.user = user;
+        this.orderDate = orderDate;
+        this.orderAddress = orderAddress;
+        this.bill = bill;
+        this.orderTotal = orderTotal;
+        this.orderPayType = orderPayType;
+    }
+
+   
+    // Property accessors
+
+    public Order(int id, User user, Date orderDate, String orderAddress,
+			String bill, int orderTotal, String orderPayType) {
+		super();
+		this.id = id;
+		this.user = user;
+		this.orderDate = orderDate;
+		this.orderAddress = orderAddress;
+		this.bill = bill;
+		this.orderTotal = orderTotal;
+		this.orderPayType = orderPayType;
+	}
+
+
+	public int getId() {
+        return this.id;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+    
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Date getOrderDate() {
+        return this.orderDate;
+    }
+    
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getOrderAddress() {
+        return this.orderAddress;
+    }
+    
+    public void setOrderAddress(String orderAddress) {
+        this.orderAddress = orderAddress;
+    }
+
+    public String getBill() {
+        return this.bill;
+    }
+    
+    public void setBill(String bill) {
+        this.bill = bill;
+    }
+
+    public int getOrderTotal() {
+        return this.orderTotal;
+    }
+    
+    public void setOrderTotal(int orderTotal) {
+        this.orderTotal = orderTotal;
+    }
+
+    public String getOrderPayType() {
+        return this.orderPayType;
+    }
+    
+    public void setOrderPayType(String orderPayType) {
+        this.orderPayType = orderPayType;
+    }
+
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", orderDate="
+				+ orderDate + ", orderAddress=" + orderAddress + ", bill="
+				+ bill + ", orderTotal=" + orderTotal + ", orderPayType="
+				+ orderPayType + "]";
+	}
+   
+
+
+
+
+
+
+
+
+}

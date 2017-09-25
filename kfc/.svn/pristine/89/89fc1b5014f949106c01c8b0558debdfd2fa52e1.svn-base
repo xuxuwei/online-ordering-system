@@ -1,0 +1,41 @@
+package com.newer.dao.impl.back;
+
+import java.util.List;
+
+import com.newer.dao.inter.back.RoleDAO;
+import com.newer.pojo.Role;
+import com.newer.pojo.User;
+
+public class RoleDAOimpl implements RoleDAO{
+
+	@Override
+	public boolean addRole() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteRoleById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Role> selectAllRole() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean modifyRoleById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modifyRole(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

@@ -1,0 +1,177 @@
+package com.newer.dao.impl.back;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.newer.dao.inter.back.RoleDAO;
+import com.newer.pojo.Meal;
+import com.newer.pojo.Role;
+import com.newer.pojo.User;
+import com.newer.util.HibernateSessionFactory;
+
+public class RoleDAOimpl implements RoleDAO{
+
+	@Override
+	public boolean add(Role role) {
+		boolean flag = false;
+		// 1、获取SessionFactory
+		SessionFactory sessionFactory = HibernateSessionFactory
+				.getSessionFactory();
+		// 2、获取Session
+		Session session = sessionFactory.openSession();
+		// 3、开启事务
+		Transaction tran = session.beginTransaction();
+		// 4、执行保存操作
+		try {
+			session.save(role);
+			tran.commit();
+			flag = true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tran.rollback();
+		} finally {
+			// 关闭session
+			session.close();
+		}
+		return flag;
+	}
+
+	@Override
+	public boolean delete(Role role) {
+		boolean flag = false;
+		// 1、获取SessionFactory
+		SessionFactory sessionFactory = HibernateSessionFactory
+				.getSessionFactory();
+		// 2、获取Session
+		Session session = sessionFactory.openSession();
+		// 3、开启事务
+		Transaction tran = session.beginTransaction();
+		// 4、执行删除操作
+		try {
+			session.delete(role);
+			tran.commit();
+			flag = true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tran.rollback();
+		} finally {
+			// 关闭session
+			session.close();
+			}
+		return flag;
+	}
+
+	@Override
+	public Role selectById(int id) {
+		// 1、获取SessionFactory
+		SessionFactory sessionFactory = HibernateSessionFactory
+				.getSessionFactory();
+		// 2、获取Session
+		Session session = sessionFactory.openSession();
+		Role role = null;
+		// 4、执行查询操作
+		try {
+			 role = (Role) session.get(Role.class, id);
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} finally {
+			// 关闭session
+			session.close();
+		}
+		return role;
+	}
+	
+	public Role selectByName(Role role) {
+		Role result = null;
+		// 1、获取SessionFactory
+		SessionFactory sessionFactory = HibernateSessionFactory
+				.getSessionFactory();
+		// 2、获取Session
+		Session session = sessionFactory.openSession();
+		// 3、开启事务
+		Transaction tran = session.beginTransaction();
+		// 4、执行查询所有操作
+		try {
+			// HQL语句
+			String hql = "from Role r where r.roleName = ?";
+			Query query = session.createQuery(hql);
+			query.setString(0, role.getRoleName());
+			List l = query.list();
+			if(l.size() > 0) {
+				result = (Role)l.get(0);
+			}
+			tran.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+
+		} catch(Exception e){
+			e.printStackTrace();
+			tran.rollback();
+		}finally {
+			// 关闭session
+			session.close();
+		}					
+		return result;
+	}
+	
+	@Override
+	public List<Role> selectAll() {
+		 List<Role> list =new ArrayList<Role>();
+			// 1、获取SessionFactory
+			SessionFactory sessionFactory = HibernateSessionFactory
+					.getSessionFactory();
+			// 2、获取Session
+			Session session = sessionFactory.openSession();
+			// 4、执行查询所有操作
+			try {
+				// HQL语句
+				String hql = "from Role";
+				Query query = session.createQuery(hql);
+				List l = query.list();
+				if(l.size() > 0) {
+					list = l;
+				}
+			} catch (HibernateException e) {
+				e.printStackTrace();
+
+			} catch(Exception e){
+				e.printStackTrace();
+			}finally {
+				// 关闭session
+				session.close();
+			}
+			return list;
+	}
+
+	@Override
+	public boolean modify(Role role) {
+		boolean flag = false;
+		// 1、获取SessionFactory
+		SessionFactory sessionFactory = HibernateSessionFactory
+				.getSessionFactory();
+		// 2、获取Session
+		Session session = sessionFactory.openSession();
+		// 3、开启事务
+		Transaction tran = session.beginTransaction();
+		// 4、执行更新操作
+		try {
+			session.update(role);
+			tran.commit();
+			flag = true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			tran.rollback();
+		} finally {
+			// 关闭session
+			session.close();
+		}
+		return flag;
+	}
+	
+}

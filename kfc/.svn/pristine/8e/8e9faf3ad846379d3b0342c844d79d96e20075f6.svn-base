@@ -1,0 +1,57 @@
+package com.newer.service.inter.back;
+
+import java.util.List;
+
+import com.newer.pojo.User;
+
+public interface AdUserService {
+	
+	/**
+	 * 是否添加管理员用户
+	 * @param user
+	 * @return
+	 */
+	public boolean addAdUser(User user);
+	
+	/**
+	 * 删除管理员用户
+	 * @param user
+	 * @return
+	 */
+	public boolean deleteAdUser(User user);
+
+	/**
+	 * 修改管理员用户
+	 * @param user
+	 * @return
+	 */
+	public boolean updateAdUser(User user);
+
+	/**
+	 * 根据ID查询管理员用户
+	 * @param user
+	 * @return User
+	 */
+	public User selectAdUserById(User user);
+
+
+	/**
+	 * 查询所有管理员用户
+	 * @return List<User>
+	 */
+	public List<User> selectAllAdUser();
+	
+	/**
+	 * 根据角色id查询所属管理员用户
+	 * @return List<User>
+	 */
+	public List<User> selectAllAdUserByRoleId();
+	/**
+	 * 根据名字查询管理员用户
+	 * @param user
+	 * @return List<User>
+	 */
+	public  List<User> selectByAdUserName(User user);
+	
+	
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.newer.pojo">
+    <class name="Role" table="tb_role" catalog="kfc">
+        <id name="roleId" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native"></generator>
+        </id>
+        <property name="roleName" type="java.lang.String">
+            <column name="role_name" length="20" />
+        </property>
+      	<set name="users" inverse="true" cascade="all" lazy="false">
+      		<key>
+      			<column name="role_id"></column>
+      		</key>
+      		<one-to-many class="User"/>
+      	</set>
+      	<set name="module" table="tb_role_module" cascade="all" inverse="true">
+      		<key>
+      			<column name="role_id"></column>
+      		</key>
+      		<many-to-many class="Module" column="module_id"></many-to-many>
+      	</set> 
+    </class> 
+</hibernate-mapping>

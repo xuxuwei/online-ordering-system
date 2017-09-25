@@ -1,0 +1,52 @@
+package com.newer.dao.impl.back;
+
+import java.util.List;
+
+import com.newer.dao.inter.back.UserDAO;
+import com.newer.pojo.User;
+
+public class UserDAOimpl implements UserDAO{
+
+	@Override
+	public boolean addAdUser(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteAdUser(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateAdUser(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public User selectAdUserById(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> selectAllAdUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> selectAllAdUserByRoleId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> selectByAdUserName(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

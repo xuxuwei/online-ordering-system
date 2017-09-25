@@ -1,0 +1,73 @@
+package com.newer.service.impl.back;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.newer.dao.impl.OrderDAO;
+import com.newer.pojo.Order;
+import com.newer.service.inter.back.AdOrderService;
+
+public class AdOrderServiceImpl implements AdOrderService{
+	@Autowired
+	private OrderDAO orderDao;
+	
+
+	public OrderDAO getOrderDao() {
+		return orderDao;
+	}
+
+	public void setOrderDao(OrderDAO orderDao) {
+		this.orderDao = orderDao;
+	}
+
+	@Override
+	public boolean add(Order o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(Order o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteByUser_id(int user_id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modify(Order o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Order selectById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Order> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Order selectByO_time(String Time) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Order selectOrderBySend(boolean send) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

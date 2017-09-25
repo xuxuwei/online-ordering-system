@@ -1,0 +1,64 @@
+package com.newer.service.impl.back;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.newer.dao.inter.back.UserDAO;
+import com.newer.pojo.User;
+import com.newer.service.inter.back.AdUserService;
+
+public class AdUserServiceImpl implements AdUserService {
+	@Autowired
+	private UserDAO userDao;
+
+	@Override
+	public boolean add(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteByRole_id(int role_id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modify(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public User selectById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> selectAllByRoleId(int role_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User selectByAdUserName(int role_id, String user_name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

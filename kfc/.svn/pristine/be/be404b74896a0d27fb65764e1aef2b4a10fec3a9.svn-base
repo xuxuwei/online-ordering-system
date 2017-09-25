@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.newer.pojo">
+    <class name="Module" table="tb_module" catalog="kfc">
+        <id name="moduleId" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment"></generator>
+        </id>      
+        <property name="moduleName" type="java.lang.String">
+            <column name="module_name" length="20" />
+        </property>
+       
+        <!-- name="roles" 是Module类中的roles属性 -->
+		<set name="roles" table="tb_role_module" cascade="save-update">
+			<!-- 会在"tb_role_module"中产生一个module_id字段，用于引用module表中的id -->
+			<key column="module_id" />
+			<!-- 会在"tb_meal_order"中产生一个meal_id字段，用于引用meal表中的id -->
+			<many-to-many class="Role" column="role_id"></many-to-many>
+		</set>
+      
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+package com.newer.service.impl.back;
+
+import java.util.List;
+
+import com.newer.dao.impl.back.ModuleDAOimpl;
+import com.newer.pojo.Module;
+import com.newer.pojo.Role;
+import com.newer.service.inter.back.AdModuleService;
+
+public class AdModuleServiceImpl implements AdModuleService {
+	
+	private ModuleDAOimpl moduleDao;
+	
+	public ModuleDAOimpl getModuleDao() {
+		return moduleDao;
+	}
+
+	public void setModuleDao(ModuleDAOimpl moduleDao) {
+		this.moduleDao = moduleDao;
+	}
+
+	@Override
+	public boolean addModule() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteModuleById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Module> selectAllModule() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean modifyModuleById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modifyModule(Role role) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

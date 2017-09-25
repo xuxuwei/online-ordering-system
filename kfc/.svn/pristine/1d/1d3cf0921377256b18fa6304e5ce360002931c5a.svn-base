@@ -1,0 +1,28 @@
+package com.newer.action.back;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.newer.dao.inter.back.OrderDAO;
+import com.newer.pojo.Order;
+import com.newer.service.inter.back.AdOrderService;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class OrderAction extends ActionSupport{
+	@Autowired
+	private AdOrderService orderService;
+	@Autowired
+	private Order order;
+	public AdOrderService getOrderService() {
+		return orderService;
+	}
+	public void setOrderService(AdOrderService orderService) {
+		this.orderService = orderService;
+	}
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order Order) {
+		this.order = Order;
+	}
+
+}

@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+body { font: 12px/1.5 微软雅黑,黑体,tahoma,arial,'Hiragino Sans GB',宋体,sans-serif;}
+img {display: block;}
+.containers {max-width: 1000px;margin: 0 auto;padding: 0; position: relative;}
+.background_image{float:right;margin-top: -5px;}
+.text_tip{color:rgb(214,47,53);font-size: 42px;padding-top: 136px;}
+.text_tip2{font-size: 18px;margin-top: 7px}
+.phone_demo { float: left;padding-top: 28px}
+.iphone_download{padding-top: 18px;cursor:pointer}
+.android_download{margin-top: 40px;cursor:pointer}
+.phone_codes{float:right;margin-right: 139px;margin-top: 26px; *margin-top:20px;*margin-right:86px} 
+.phone_codes img{width:134px}
+.containers div span{color:rgb(214,47,53);font-size: 18px;float:left;font-weight: 700;}
+.containers div span img{float:left;margin-left: 16px;margin-top: 7px;margin-right: 3px;}

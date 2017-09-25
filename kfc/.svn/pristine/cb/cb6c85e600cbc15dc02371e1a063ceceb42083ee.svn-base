@@ -1,0 +1,53 @@
+package com.newer.service.inter.back;
+
+import java.util.List;
+
+import com.newer.pojo.Meal;
+
+public interface AdMealService {
+	
+	/**
+	 * 是否增加商品
+	 * @param m
+	 * boolean 类型
+	 */	
+	public boolean addMeal(Meal m);
+	
+	/**
+	 * 是否根据商品id删除商品
+	 * @param id
+	 * boolean 类型
+	 */	
+	public boolean deleteByMealId(int id);
+	
+	/**
+	 * 根据商品id修改商品
+	 */
+	public boolean modifyByMealId(int id);
+	
+	/**
+	 * 根据商品id查询商品
+	 * @param id
+	 * @return Meal
+	 */
+	public Meal selectMealById(int id);
+	
+	/**
+	 * 查询所有商品
+	 * @return List<Meal>
+	 */
+	public List<Meal> selectAllMeal();
+	
+	/**
+	 * 根据商品名查询商品
+	 * @param name
+	 * @return Meal
+	 */
+	public Meal selectMealByName(String name);
+	
+	/**
+	 * 查询所属类别商品
+	 * @return List<Meal>
+	 */
+	public List<Meal> selectMealByCategory();
+}
